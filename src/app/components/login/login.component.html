@@ -1,0 +1,14 @@
+<div class="body">
+    <div class="login">
+        <img [src]="" alt="" width="50%" height="80%">
+        <h1 class="h3 mb-3 fw-normal">Ingresa el Vin</h1>
+        <mat-form-field class="ancho" appearance="fill">
+            <mat-label>Vin</mat-label>
+            <input matInput [(ngModel)]="codigVIN" >
+          </mat-form-field>
+          <br>
+          <button (click)="ingresar()" class="ancho" mat-raised-button mat-button color="primary">Ingresa</button>
+    </div>
+</div>
+
+
