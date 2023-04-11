@@ -1,84 +1,319 @@
 <div class="container">
   <mat-toolbar>
-    <span> Vehiculo: Vin:</span>
+    <!-- <span> Vehiculo: Vin:</span> -->
   </mat-toolbar>
-
   <mat-horizontal-stepper>
-    <mat-step label="Primer paso">
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Placeholder" [(ngModel)]="nombre" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Vin :</mat-label>
-          <input matInput placeholder="Placeholder" [(ngModel)]="vin" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Comnetario:</mat-label>
-          <textarea matInput placeholder="Placeholder" [(ngModel)]="comnetario" ></textarea>  
-        </mat-form-field>
-      </p>
-      <div>
-       
-        <mat-form-field>
-          <div>
-            <mat-toolbar>
-              <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Seleccionar imagenes'" /> 
-            </mat-toolbar>
+    <mat-step label="Primer paso" >
+      <div class="containerImgC">
+        <img src="../../../../assets/2.png" alt="">
+      </div>
+      <div class="bgcontainer">
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="nombre" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Vin :</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="vin" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+         
+          <mat-form-field class="imgbutton">
+            <div>
+              <mat-toolbar>
+                <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Seleccionar imagenes'" /> 
+              </mat-toolbar>
+          
+              <input
+                type="file"
+                id="fileInput"
+                name="fileInput"
+                accept="image/*" multiple 
+                (change)="selectFiles($event)"
+              />
+            </div>
+          </mat-form-field>
+         
+        </div>
+        <div class="containerInput ">
+          <mat-form-field class="inputLi bg">
+            <mat-label>Comnetario:</mat-label>
+            <textarea matInput placeholder="Placeholder" [(ngModel)]="comnetario" ></textarea>  
+          </mat-form-field>
+        </div>
+  
+        <!-- <button mat-flat-button color="accent" (click)="onGuardarCambios()">Guardar cambios</button>
+        <div>
+          <img *ngFor='let preview of previews' [src]="preview" class="preview">
+        </div>
         
-            <input
-              type="file"
-              id="fileInput"
-              name="fileInput"
-              accept="image/*" multiple 
-              (change)="selectFiles($event)"
-            />
-          </div>
-        </mat-form-field>
+        <div *ngIf="message.length" class="message">
+          <ul *ngFor="let msg of message; let i = index">
+            <li>{{ msg }}</li>
+          </ul>
+        </div>
+        
+        <mat-card class="list-card"> 
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item role="listitem" *ngFor="let image of imageInfos | async" class="list-item">
+                <p matLine><a href="{{ image.url }}">{{ image.name }}</a></p>
+                <img src="{{ image.url }}" alt="{{ image.name }}" height="50px"/>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-label>Comnetario: {{result.comment }} </mat-label>
+        <br>
+        <mat-label>Mensaje: {{result.message}} </mat-label>
+        <br>
+   
+          <img src="https://sandbox.abcars.mx/abcars-backend/api/check_images/{{result.image}}"  height="100px"/> -->
+  
        
       </div>
-
-      <button mat-flat-button color="accent" (click)="onGuardarCambios()">Guardar cambios</button>
-      <div>
-        <img *ngFor='let preview of previews' [src]="preview" class="preview">
-      </div>
       
-      <div *ngIf="message.length" class="message">
-        <ul *ngFor="let msg of message; let i = index">
-          <li>{{ msg }}</li>
-        </ul>
-      </div>
-      
-      <mat-card class="list-card"> 
-        <mat-card-content>
-          <mat-list role="list">
-            <mat-list-item role="listitem" *ngFor="let image of imageInfos | async" class="list-item">
-              <p matLine><a href="{{ image.url }}">{{ image.name }}</a></p>
-              <img src="{{ image.url }}" alt="{{ image.name }}" height="50px"/>
-            </mat-list-item>
-          </mat-list>
-        </mat-card-content>
-      </mat-card>
-      
-      <mat-label>Comnetario: {{result.comment }} </mat-label>
-      <br>
-      <mat-label>Mensaje: {{result.message}} </mat-label>
-      <br>
- 
-        <img src="https://sandbox.abcars.mx/abcars-backend/api/check_images/{{result.image}}"  height="100px"/>
-
-     
     </mat-step>
 
-    <mat-step label="Segundo paso"> </mat-step>
+    <mat-step label="Segundo paso">
+      <div class="containerImgC">
+        <img src="../../../../assets/5.png" alt="">
+      </div>
+      <div class="bgcontainer">
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="nombre" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Vin :</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="vin" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+         
+          <mat-form-field class="imgbutton">
+            <div>
+              <mat-toolbar>
+                <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Seleccionar imagenes'" /> 
+              </mat-toolbar>
+          
+              <input
+                type="file"
+                id="fileInput"
+                name="fileInput"
+                accept="image/*" multiple 
+                (change)="selectFiles($event)"
+              />
+            </div>
+          </mat-form-field>
+         
+        </div>
+        <div class="containerInput ">
+          <mat-form-field class="inputLi bg">
+            <mat-label>Comnetario:</mat-label>
+            <textarea matInput placeholder="Placeholder" [(ngModel)]="comnetario" ></textarea>  
+          </mat-form-field>
+        </div>
+  
+        <!-- <button mat-flat-button color="accent" (click)="onGuardarCambios()">Guardar cambios</button>
+        <div>
+          <img *ngFor='let preview of previews' [src]="preview" class="preview">
+        </div>
+        
+        <div *ngIf="message.length" class="message">
+          <ul *ngFor="let msg of message; let i = index">
+            <li>{{ msg }}</li>
+          </ul>
+        </div>
+        
+        <mat-card class="list-card"> 
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item role="listitem" *ngFor="let image of imageInfos | async" class="list-item">
+                <p matLine><a href="{{ image.url }}">{{ image.name }}</a></p>
+                <img src="{{ image.url }}" alt="{{ image.name }}" height="50px"/>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-label>Comnetario: {{result.comment }} </mat-label>
+        <br>
+        <mat-label>Mensaje: {{result.message}} </mat-label>
+        <br>
+   
+          <img src="https://sandbox.abcars.mx/abcars-backend/api/check_images/{{result.image}}"  height="100px"/> -->
+  
+       
+      </div>
+    </mat-step>
 
-    <mat-step label="tercero paso"> </mat-step>
+    <mat-step label="tercero paso">
+      <div class="containerImgC">
+        <img src="../../../../assets/6.png" alt="">
+      </div>
+      <div class="bgcontainer">
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="nombre" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Vin :</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="vin" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+         
+          <mat-form-field class="imgbutton">
+            <div>
+              <mat-toolbar>
+                <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Seleccionar imagenes'" /> 
+              </mat-toolbar>
+          
+              <input
+                type="file"
+                id="fileInput"
+                name="fileInput"
+                accept="image/*" multiple 
+                (change)="selectFiles($event)"
+              />
+            </div>
+          </mat-form-field>
+         
+        </div>
+        <div class="containerInput ">
+          <mat-form-field class="inputLi bg">
+            <mat-label>Comnetario:</mat-label>
+            <textarea matInput placeholder="Placeholder" [(ngModel)]="comnetario" ></textarea>  
+          </mat-form-field>
+        </div>
+  
+        <!-- <button mat-flat-button color="accent" (click)="onGuardarCambios()">Guardar cambios</button>
+        <div>
+          <img *ngFor='let preview of previews' [src]="preview" class="preview">
+        </div>
+        
+        <div *ngIf="message.length" class="message">
+          <ul *ngFor="let msg of message; let i = index">
+            <li>{{ msg }}</li>
+          </ul>
+        </div>
+        
+        <mat-card class="list-card"> 
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item role="listitem" *ngFor="let image of imageInfos | async" class="list-item">
+                <p matLine><a href="{{ image.url }}">{{ image.name }}</a></p>
+                <img src="{{ image.url }}" alt="{{ image.name }}" height="50px"/>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-label>Comnetario: {{result.comment }} </mat-label>
+        <br>
+        <mat-label>Mensaje: {{result.message}} </mat-label>
+        <br>
+   
+          <img src="https://sandbox.abcars.mx/abcars-backend/api/check_images/{{result.image}}"  height="100px"/> -->
+  
+       
+      </div>
+    </mat-step>
 
-    <mat-step label="cuarto paso"> </mat-step>
+    <mat-step label="cuarto paso">
+      <div class="containerImgC">
+        <img src="../../../../assets/31.png" alt="">
+      </div>
+      <div class="bgcontainer">
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="nombre" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+          <mat-form-field class="inputLi">
+            <mat-label>Vin :</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="vin" />
+          </mat-form-field>
+        </div>
+  
+        <div class="containerInput">
+         
+          <mat-form-field class="imgbutton">
+            <div>
+              <mat-toolbar>
+                <input matInput [value]="selectedFileNames.length ? selectedFileNames : 'Seleccionar imagenes'" /> 
+              </mat-toolbar>
+          
+              <input
+                type="file"
+                id="fileInput"
+                name="fileInput"
+                accept="image/*" multiple 
+                (change)="selectFiles($event)"
+              />
+            </div>
+          </mat-form-field>
+         
+        </div>
+        <div class="containerInput ">
+          <mat-form-field class="inputLi bg">
+            <mat-label>Comnetario:</mat-label>
+            <textarea matInput placeholder="Placeholder" [(ngModel)]="comnetario" ></textarea>  
+          </mat-form-field>
+        </div>
+  
+        <!-- <button mat-flat-button color="accent" (click)="onGuardarCambios()">Guardar cambios</button>
+        <div>
+          <img *ngFor='let preview of previews' [src]="preview" class="preview">
+        </div>
+        
+        <div *ngIf="message.length" class="message">
+          <ul *ngFor="let msg of message; let i = index">
+            <li>{{ msg }}</li>
+          </ul>
+        </div>
+        
+        <mat-card class="list-card"> 
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item role="listitem" *ngFor="let image of imageInfos | async" class="list-item">
+                <p matLine><a href="{{ image.url }}">{{ image.name }}</a></p>
+                <img src="{{ image.url }}" alt="{{ image.name }}" height="50px"/>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-label>Comnetario: {{result.comment }} </mat-label>
+        <br>
+        <mat-label>Mensaje: {{result.message}} </mat-label>
+        <br>
+   
+          <img src="https://sandbox.abcars.mx/abcars-backend/api/check_images/{{result.image}}"  height="100px"/> -->
+  
+       
+      </div>   
+    </mat-step>
   </mat-horizontal-stepper>
 </div>

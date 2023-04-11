@@ -56,3 +56,40 @@
   .list-item {
     margin-bottom: 20px;
   }
+  .inputLi{
+
+      background-color: #BDBDBD;
+      border-radius: 25px;
+      margin-bottom: 10px;
+      text-align: left;
+      color: aliceblue;
+      text-align: center;
+      width: 300px;
+    border-radius: 25px;
+  }
+  .containerInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgbutton{
+    width: 180px;
+    border-radius: 25px;
+    margin: 40px 0; 
+    background-color: #1057DB;
+  }
+  .containerImgC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .bgcontainer{
+    width: 100%;
+    padding: 50px 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px ;
+  }
+  .bg{
+    background-color: #EEB838;
+  }

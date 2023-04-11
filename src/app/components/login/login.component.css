@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding:150px 0 20px 0;
+  padding:100px 0 20px 0;
 }
 .body {
     display: flex;
@@ -12,10 +12,9 @@
   
     background-color: #f5f5f5;
 
-    padding: 0;
     border-top-right-radius: 20px;
     border-top-left-radius:20px ;
-    padding: 250px 0;
+    padding: 100px 0;
   }
   .login {
     width: 100%;
@@ -25,11 +24,11 @@
   }
   .container-login{
     margin: 0 auto;
+    margin-bottom: 100px;
   }
   .ancho {
-    width: 400px;
+    width: 300px;
     border-radius: 25px;
-    margin: 40px 0;
   }
   .anchoB {
     width: 180px;
@@ -50,3 +49,4 @@
     color: white;
 
   }
+  
